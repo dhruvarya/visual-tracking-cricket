@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Visual Tracking in Cricket</title>
+  <link href="../static/css/styleme.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/master.css">      
+    <link rel="stylesheet" href="../static/css/cool-navbars.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    
+<script src="../static/js/d3.min.js"></script>
+      
+<style>
+  #tooltip {
+      position: absolute;
+      width: 250px;
+      height: auto;
+      padding: 5px;
+      background-color: white;
+      opacity: 0.8;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      -webkit-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+      box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+  }
+  
+  #tooltip.hidden {
+      display: none;
+  }
+  
+  #tooltip p {
+      margin: 0;
+      font-family: sans-serif;
+      font-size: 17px;
+      line-height: 20px;
+      color: black;
+  }
+
+  #form-id.hidden{
+    display: none;
+  }
+  a.button3{
+   padding:0.5em 3em;
+  border:0.16em solid #FFFFFF;
+   margin:0 0.3em 0.3em 0;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:400;
+   text-align:center;
+  display:none;
+  }
+  @media all and (max-width:30em){
+   a.button3{
+    margin:0.4em auto;
+  display:none;
+   }
+  #button2{
+   display:inline-block;
+   padding:0.5em 3em;
+   margin:0 0.3em 0.3em 0;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:400;
+   text-align:center;
+  }
+  @media all and (max-width:30em){
+   #button2{
+    display:block;
+    margin:0.4em auto;
+   }
+  </style>
+
+</head>
+
+<body bgcolor="black">
+
+   <nav id="main-nav">
+        <ul class="menu">
+            <li class="logo"><a href="#">Visual Tracking in Cricket</a></li>
+      <li>PLAYER ANALYSIS</li>
+    </ul>
+    <ul class="menu">
+            <li class="item button secondary"><a href="/left">Calibration</a></li>
+            <li class="item button secondary"><a href="/annotation">Annotation</a></li>
+            <li class="item button secondary"><a href="/teamdetails">Form</a></li>
+            </li>
+            
+        </ul>
+    </nav>
+    <div id = "svgj">
+      <svg width="46%" height="auto" viewBox="0 0 2000 2200" stroke="white" version="1.1" id="rot">  
+
+
+      <g
+       inkscape:label="Layer 1"
+       inkscape:groupmode="layer"
+       id="layer1">
+      <path
+         sodipodi:type="arc"
+         style="opacity:1.0000000;fill:#0ba70e;fill-opacity:1.0000000;stroke:#130000;stroke-width:5.0000000;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+         id="path2049"
+         sodipodi:cx="3250.0000"
+         sodipodi:cy="3556.6143"
+         sodipodi:rx="3250.0000"
+         sodipodi:ry="3530.0000"
+         d="M 6500.0000 3556.6143 A 3250.0000 3530.0000 0 1 1  0.00000000,3556.6143 A 3250.0000 3530.0000 0 1 1  6500.0000 3556.6143 z"
+         transform="matrix(0.292089,0.000000,0.000000,0.283082,50.71075,93.18652)" />
+      <rect
+         style="opacity:1.
+         0000000;fill:#6cbb11;fill-opacity:1.0000000;stroke:#ffffff;stroke-width:6.3750000;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+         id="rect3530"
+         width="898.43744"
+         height="1250.0000"
+         x="550.78125"
+         y="475.00000"
+         ry="471.99997"
+         rx="449.21872" />
+      <g
+         id="g3526"
+         transform="translate(2.000000e-6,0.000000)">
+        <path
+           transform="matrix(0.923077,0.000000,0.000000,0.923077,73.23069,79.26936)"
+           d="M 1164.0000 972.00000 A 160.00000 160.00000 0 1 1  844.00000,972.00000 A 160.00000 160.00000 0 1 1  1164.0000 972.00000 z"
+           sodipodi:ry="160.00000"
+           sodipodi:rx="160.00000"
+           sodipodi:cy="972.00000"
+           sodipodi:cx="1004.0000"
+           id="path3505"
+           style="opacity:1.0000000;fill:#9ed852;fill-opacity:1.0000000;stroke:#ffffff;stroke-width:5.0000000;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:5.0000000 10.000000 ;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+           sodipodi:type="arc" />
+        <path
+           sodipodi:type="arc"
+           style="opacity:1.0000000;fill:#9ed852;fill-opacity:1.0000000;stroke:#ffffff;stroke-width:5.0000000;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:5.0000000 10.000000 ;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+           id="path3507"
+           sodipodi:cx="1004.0000"
+           sodipodi:cy="972.00000"
+           sodipodi:rx="160.00000"
+           sodipodi:ry="160.00000"
+           d="M 1164.0000 972.00000 A 160.00000 160.00000 0 1 1  844.00000,972.00000 A 160.00000 160.00000 0 1 1  1164.0000 972.00000 z"
+           transform="matrix(0.923077,0.000000,0.000000,0.923077,73.23069,325.2694)" />
+      </g>
+      <path
+         transform="matrix(0.923077,0.000000,0.000000,0.923077,73.23069,79.26936)"
+         d="M 1164.0000 972.00000 A 160.00000 160.00000 0 1 1  844.00000,972.00000 A 160.00000 160.00000 0 1 1  1164.0000 972.00000 z"
+         sodipodi:ry="160.00000"
+         sodipodi:rx="160.00000"
+         sodipodi:cy="972.00000"
+         sodipodi:cx="1004.0000"
+         id="path3522"
+         style="opacity:1.0000000;fill:none;fill-opacity:1.0000000;stroke:#ffffff;stroke-width:5.0000000;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:5.0000000 10.000000 ;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+         sodipodi:type="arc" />
+      <path
+         sodipodi:type="arc"
+         style="opacity:1.0000000;fill:none;fill-opacity:1.0000000;stroke:#ffffff;stroke-width:5.0000000;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:5.0000000 10.000000 ;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+         id="path3524"
+         sodipodi:cx="1004.0000"
+         sodipodi:cy="972.00000"
+         sodipodi:rx="160.00000"
+         sodipodi:ry="160.00000"
+         d="M 1164.0000 972.00000 A 160.00000 160.00000 0 1 1  844.00000,972.00000 A 160.00000 160.00000 0 1 1  1164.0000 972.00000 z"
+         transform="matrix(0.923077,0.000000,0.000000,0.923077,73.23069,325.2694)" />
+      <rect
+         style="opacity:1.0000000;fill:#fff26c;fill-opacity:1.0000000;stroke:none;stroke-width:2.6892948;stroke-linecap:butt;stroke-miterlimit:12.000000;stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+         id="rect2777"
+         width="127.33472"
+         height="359.14261"
+         x="936.33264"
+         y="920.42871" />
+
+      
+    </g>
+
+    </svg>
+  </div>
+  <div style="position: absolute; left: 50%; top: 90%;">
+    <button class="button2" onclick="Rotate_right()">Rotate Right</button>
+    <button class="button2" onclick="Rotate_left()">Rotate Left</button>
+    <a href="/end" class="button3" id="endmatch-button" onclick="endmatch()">Endmatch</a>
+    <button class="button2" id = "submit-button" onclick="changeInnings()"> End Innings </button>
+  </div>
+
+<div id="tooltip" class="hidden">
+        <p><strong>Player Detail</strong></p>
+        <p>Name: <span id="name">100</span></p>
+    <p>Number: <span id="number">100</span></p>
+</div>
+<div style="position: absolute; left: 46%; top: 15%; overflow-x: auto; width: 100%" id =myDIV1>
+  <div>
+    <h1><strong>Team-1</strong></h1>
+    <table>
+      <tbody style="text-align:center">
+        <tr>
+          {% for row in team1_play_6 %}
+            <td><button onclick='newNumber( {{row["index"]}}  )' onmouseover='newline( {{row["index"]}} )'> <img src="data:;base64,{{ row['image'] }}" height=100px   width=100px/></button></td>
+          {% endfor %}
+        </tr>
+        <tr  >
+          {% for row in team1_play_6 %}
+            <td  id="{{row['index']}}">{{row["name"]}}</td>
+          {% endfor %}
+        </tr>
+         <tr>
+          {% for row in team1_play_5 %}
+            <td ><button onclick='newNumber( {{row["index"]}} )' onmouseover='newline( {{row["index"]}} )'> <img src="data:;base64,{{ row['image'] }}" height=100px width=100px/></button></td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for row in team1_play_5 %}
+            <td id="{{row['index']}}">{{row["name"]}}</td>
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div>
+    <h1><strong>Team-1 Subs</strong></h1>
+    <table>
+      <tbody style="text-align:center">
+          <tr>
+            {% for row in team1_subs %}
+            <td><button onclick='newNumber( {{row["index"]}} )' onmouseover='newline( {{row["index"]}} )'><img src="data:;base64,{{ row['image'] }}" height=100px width=100px/></button></td>
+            {% endfor %}
+          </tr>
+          <tr>
+            {% for row in team1_subs %}
+            <td id="{{row['index']}}">{{row["name"]}}</td>
+            {% endfor %}
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+</div>
+<div  id="myDIV2" style="position: absolute; left: 46%; top: 15%; display: none; overflow-x: auto; width:100%">
+  <div>
+    <h1><strong>Team-2</strong></h1>
+    <table>
+      <tbody style="text-align:center">
+        <tr>
+          {% for row in team2_play_6 %}
+            <td><button onclick='newNumber( {{row["index"]}} )' onmouseover='newline( {{row["index"]}} )'> <img src="data:;base64,{{ row['image'] }}" height=100px width=100px/></button></td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for row in team2_play_6 %}
+            <td id="{{row['index']}}">{{row["name"]}}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for row in team2_play_5 %}
+            <td><button onclick='newNumber( {{row["index"]}} )' onmouseover='newline( {{row["index"]}} )'> <img src="data:;base64,{{ row['image'] }}" height=100px width=100px/></button></td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for row in team2_play_5 %}
+            <td id="{{row['index']}}">{{row["name"]}}</td>
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div>
+    <h1><strong>Team-2 Subs</strong></h1>
+    <table>
+      <tbody style="text-align:center">
+          <tr>
+            {% for row in team2_subs %}
+            <td><button onclick='newNumber( {{row["index"]}} )' onmouseover='newline( {{row["index"]}} )'><img src="data:;base64,{{ row['image'] }}" height=100px width=100px/></button></td>
+            {% endfor %}
+          </tr>
+          <tr>
+            {% for row in team2_subs %}
+            <td id="{{row['index']}}">{{ row["name"] }}</td>
+            {% endfor %}
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+
+  <script>
+
+    var players = {{all_players | tojson}};
+
+    function newNumber(a1){
+    if (lit.length!=0)
+    {
+      clr_map[lit[0]]=0;
+      dis_map[lit[0]]=0;
+      d_text_map[lit[0]]=0;
+
+      if(a1-1!=lit[0])
+      {
+      lit=[]
+      clr_map[a1-1]=1;
+      dis_map[a1-1]=1;
+      lit.push(a1-1);
+      }
+
+      else
+      {
+      lit=[]
+      }
+
+    }
+    else
+    {
+      lit=[];
+      if ( map.indexOf(a1-1)!=-1 )
+      {
+        mark=map.indexOf(a1-1);
+      }
+      dis_map[a1-1]=1;
+      clr_map[a1-1]=1;
+      lit.push(a1-1);
+    }
+    console.log(lit)
+
+  }
+
+  function newline(a1)
+  { 
+    if (lit.lentgh!=0)
+    {
+      if (map.indexOf(a1-1)!=-1)
+      {  mark=map.indexOf(a1-1);
+
+          if(a1-1!=lit[0])
+            d_text_map[lit[0]]=1;
+
+          else
+            d_text_map[lit[0]]=0;
+
+      }
+      
+    }
+
+  }
+  
+  function changeInnings() {
+   document.getElementById("myDIV1").style.display="none";
+   map=[]
+   map=[16,17,18,19,20,21,22,23,24,25,26]
+   document.getElementById("myDIV2").style.display="block";
+
+   document.getElementById('submit-button').style.display = "none";
+    document.getElementById("endmatch-button").style.display = "inline-block";
+  
+    // document.getElementById('submit-button').innerHTML = "End Match";
+    // document.getElementById('submit-button').onclick = endmatch; 
+  }  
+
+  function endmatch() {
+    alert("match ended");
+  }
+  var cpy={ "image" : "",
+        "index": "33",
+        "name" : "",
+        "jno" : ""
+      };
+    players.push(cpy) 
+  console.log(cpy)
+  console.log(players);
+  
+  // var players = [{
+  //         "Number": "40", 
+  //         "name": "Shikhar Dhawan", 
+  //         "x": "1200", 
+  //         "y": "200"
+  //       }, 
+  //       {
+  //         "Number": "25", 
+  //         "name": "Rohit Sharma", 
+  //         "x": "400", 
+  //         "y": "400"
+  //       }, 
+  //       {
+  //         "Number": "18", 
+  //         "name": "Virat Kohli", 
+  //         "x": "280", 
+  //         "y": "1440"
+  //       }, 
+  //       {
+  //         "Number": "41", 
+  //         "name": "Shreyas Iyer", 
+  //         "x": "1040", 
+  //         "y": "2000"
+  //       }, 
+  //       {
+  //         "Number": "1", 
+  //         "name": "KL Rahul", 
+  //         "x": "1000", 
+  //         "y": "700"
+  //       }, 
+  //       {
+  //         "Number": "8", 
+  //         "name": "Ravindra Jadeja", 
+  //         "x": "620", 
+  //         "y": "900"
+  //       }, 
+  //       {
+  //         "Number": "33", 
+  //         "name": "Hardik Pandya", 
+  //         "x": "1860", 
+  //         "y": "1000"
+  //       }, 
+  //       {
+  //         "Number": "23", 
+  //         "name": "Kuldeep Yadav", 
+  //         "x": "1400", 
+  //         "y": "1250"
+  //       }, 
+  //       {
+  //         "Number": "6", 
+  //         "name": "Yuzvendra Chahal", 
+  //         "x": "1280", 
+  //         "y": "600"
+  //       }, 
+  //       {
+  //         "Number": "15", 
+  //         "name": "Bhuvneshwar Kumar", 
+  //         "x": "900", 
+  //         "y": "750"
+  //       }, 
+  //       {
+  //         "Number": "93", 
+  //         "name": "Jasprit Bumrah", 
+  //         "x": "1000", 
+  //         "y": "1450"
+  //       }];
+  var mark;
+  var curr = [];
+  var lit=[];
+  var map=[0,1,2,3,4,5,6,7,8,9,10];
+  var clr_map=[];
+  var dis_map=[]
+  var d_text_map=[];
+  for(i=0;i<33;i++)
+   { 
+    clr_map.push(0)
+    dis_map.push(0)
+     d_text_map.push(0)
+  }
+
+  
+
+
+  var color=['white','blue','red']
+  var dist=['0','10']
+  var dist_text=['0px','40px']
+
+  console.log(map)
+  console.log(clr_map)
+  var degrees = 0
+
+
+    function Rotate_right() {
+      degrees+=4;
+      document.getElementById("rot").style.transform = 'rotate(' + degrees + 'deg)';
+    }
+
+
+    function Rotate_left() {
+      degrees-=4;
+      document.getElementById("rot").style.transform = 'rotate(' + degrees + 'deg)';
+    }
+    var scaleh = d3.scaleLinear();
+  var scalev = d3.scaleLinear();
+  var width = 0.46*screen.width,
+  height = 0.506*screen.height;
+  
+  function fx(d) { return d.x; };
+  function fy(d) { return d.y; };
+
+  var svg;
+    var svg = d3.select("svg");
+  scaleh.domain([0, width])
+  console.log(width)
+  scaleh.range([0, width]);
+  scalev.domain([0, height]);
+  scalev.range([0, height]);
+
+
+var i = 0;
+var node;
+
+var currElement;
+
+function yourFunction1() {
+  
+d3.select("#tooltip").classed("hidden", true);
+  d3.json("http://localhost:4000/player")
+  .then(json => {
+    
+    datap = json.nodedata[i].nodes;
+    // console.log(datap);   
+
+      node.data(datap);
+
+      newq.data(datap);
+
+     // console.log(node.data())
+
+      node .selectAll("circle")
+      .data(function(d) { return [d]; });
+
+      node.selectAll("circle")
+      .transition()
+      .duration(2000)
+      .attr("cx", function(d, i){ return d.x})
+      .attr("cy", function(d, i){ return d.y})
+      .style("fill",function(d,i){return color[clr_map[map[Number(d.id)]]]})
+      // .attr("cx", "1000")
+      // .attr("cy", "1500")
+
+
+      node .selectAll("text")
+      .data(function(d) { return [d]; });
+
+      node.selectAll("text")
+      .transition()
+      .duration(2000)
+      .text(function(d,i){return players[map[Number(d.id)]].jno})
+      .attr("text-anchor", "middle")
+      .attr("dx", function(d, i){ return d.x})
+      .attr("dy", function(d, i){ return d.y ;})
+      .style("fill","black")
+      .style("stroke", "black")
+      .style("font-size","35px")
+      .style("stroke-width", "2")
+
+      node .selectAll("line")
+      .data(function(d) { return [d]; });
+
+      node.selectAll("line")
+      .transition()
+      .duration(2000)
+      .attr("x1", function(d, i){ return d.x})
+      .attr("y1", function(d, i){ return d.y ;})
+      .attr("x2", datap[mark].x)
+      .attr("y2", datap[mark].y)
+      .style("fill","black")
+      .style("stroke", "black")
+      .style("stroke-width",function(d,i){return dist[dis_map[map[Number(d.id)]]]} )
+
+      newq.selectAll("text")
+      .data(function(d) { return [d]; });
+
+      newq.selectAll("text")
+      .transition()
+      .duration(2000)
+      .attr("dx", function(d,i){ return (( Number(d.x) + Number(datap[mark].x))*0.5) } )
+        // console.log(datap[0].x)
+      .attr("dy", function(d,i){ return (( Number(d.y) + Number(datap[mark].y))*0.5) } )    
+      .text( function(d,i){ return  (   Math.round( Math.sqrt( Math.pow( ( Number(d.y) - Number(datap[mark].y) ), 2 )   + Math.pow( (Number(d.x) -Number(datap[mark].x) ),2) )/20 ) )  } )
+      .attr('text-anchor', 'middle')
+      .style("fill","red")
+      .style("stroke", "red")
+      .style("font-size",function(d,i){return dist_text[d_text_map[map[Number(d.id)]]]} )
+      .style("stroke-width", "3")
+
+
+    })
+
+   
+ 
+  i = i+1;
+// var j=1
+//  document.getElementById(j).style.backgroundColor = "#FF0000";
+
+ 
+   absent=[];
+    for(j=0;j<32;j++)
+    {
+      
+      if(map.findIndex ((element) => element ==j) == -1)
+        {
+        document.getElementById(j+1).style.backgroundColor = "#FF0000";
+        absent.push(j)
+        }
+        else
+        {
+        document.getElementById(j+1).style.backgroundColor = "#000000";
+        }
+
+    }
+    console.log(absent);
+
+   setTimeout(yourFunction1, 2000);
+  
+
+}
+
+
+d3.select("#tooltip").classed("hidden", true);
+  d3.json("http://localhost:4000/player")
+  .then(json => {
+    // console.log(json.nodedata);
+    datap = json.nodedata[i].nodes;
+    console.log("that")
+    console.log(datap);   
+    console.log("that")
+
+    node = svg.selectAll(".node").data(datap)
+      .enter()
+      .append("g")
+      .attr("class", "node")
+      .style("pointer-events", "all")
+
+      // console.log(elemEnter)
+
+
+      var circle = node.append("circle")
+      .attr("cx", function(d, i){ return d.x})
+      .attr("cy", function(d, i){ return d.y})
+      .attr("r", 35)
+      .style("fill", "white")
+      .style("stroke", "black")
+      .style("stroke-width", "2")
+      .style("opacity","1")
+
+      .on("mouseover", function(d) {
+
+       var xPosition = scaleh(0.4*parseFloat(d3.select(this).attr("cx")));
+       var yPosition = scalev( 0.45*parseFloat(d3.select(this).attr("cy")));
+
+      
+       d3.select("#tooltip")
+         .style("left", xPosition + "px")
+         .style("top", yPosition + "px")
+         .select("#name")
+         .text(players[map[Number(d.id)]].name);
+        console.log(xPosition)
+        console.log(yPosition)
+         
+       d3.select("#tooltip") 
+         .select("#number")
+         .text(players[map[Number(d.id)]].jno);
+
+       d3.select("#tooltip").classed("hidden", false);
+     })
+    
+    .on("mouseout", function(d) {d3.select("#tooltip").classed("hidden", true);})
+
+    .on("click", function(d) {
+      // console.log();
+      console.log(d.id);
+      console.log("hello");
+      // console.log(curr);
+      if (lit.length !=0)
+      {
+        var remove=map.findIndex ((element) => element ==lit[0]);
+        // console.log(this)
+        // console.log(map.findIndex ((element) => element ==22))
+        // console.log(this)
+        map[remove]=32;
+        map[Number(d.id)] = lit[0];
+        clr_map[lit[0]]=0
+        dis_map[lit[0]]=0;
+        d_text_map[lit[0]]=0;
+        console.log(map)
+        lit=[]
+      }
+
+      else if(curr.length === 0) {
+
+        // d3.select("#tooltip")
+        // .style("fill", "red");
+
+        // d3.select(this).style("fill", "red");
+        clr_map[map[Number(d.id)]]=2;
+        // currElement = d3.select(this);
+
+        curr.push(d.id);
+        console.log(curr);
+
+      } else {
+        clr_map[map[Number(curr[0])]]=0;
+        curr.push(d.id);
+        var temp = map[Number(d.id)];
+        map[Number(d.id)] = map[Number(curr[0])];
+        map[Number(curr[0])] = temp;
+        console.log(curr);
+        curr = [];
+        console.log(curr);
+        // currElement.style("fill", "white");
+      }
+    });
+
+    
+      
+      node.append("text")
+      .text(function(d,i){return players[map[Number(d.id)]].jno})
+      .attr("text-anchor", "middle")
+      .attr("dx", function(d, i){ return d.x})
+      .attr("dy", function(d, i){ return d.y ;})
+      .style("fill","black")
+
+      .style("stroke", "black")
+      .style("font-size","35px")
+      .style("stroke-width", "2")
+     
+        
+      .on("mouseover", function(d) {
+
+       var xPosition = scaleh(0.4*parseFloat(d3.select(this).attr("dx")));
+       var yPosition = scalev( 0.45*parseFloat(d3.select(this).attr("dy")));
+
+      
+       d3.select("#tooltip")
+         .style("left", xPosition + "px")
+         .style("top", yPosition + "px")
+         .select("#name")
+         .text(players[map[Number(d.id)]].name);
+        console.log(xPosition)
+        console.log(yPosition)
+         
+       d3.select("#tooltip") 
+         .select("#number")
+         .text(players[map[Number(d.id)]].jno);
+
+       d3.select("#tooltip").classed("hidden", false);
+     })
+
+    .on("click", function(d) {
+      // console.log();
+      console.log(d.id);
+      console.log("hello");
+      // console.log(curr);
+      if (lit.length !=0)
+      {
+        
+        var remove=map.findIndex ((element) => element ==lit[0]);
+        // console.log("that")
+        // console.log(map.findIndex ((element) => element ==22))
+        // console.log("that")
+        map[remove]=32;
+      
+        // console.log(map.findIndex(islit[0]))
+        map[Number(d.id)] = lit[0];
+        clr_map[lit[0]]=0;
+        dis_map[lit[0]]=0;
+        d_text_map[lit[0]]=0;
+        console.log(map)
+        lit=[]
+      }
+
+      else if(curr.length === 0) {
+
+        // d3.select("#tooltip")
+        // .style("fill", "red");
+
+        // d3.select(this).style("fill", "red");
+        clr_map[map[Number(d.id)]]=2;
+        // currElement = d3.select(this);
+
+        curr.push(d.id);
+        console.log(curr);
+
+      } else {
+        clr_map[map[Number(curr[0])]]=0;
+        curr.push(d.id);
+        var temp = map[Number(d.id)];
+        map[Number(d.id)] = map[Number(curr[0])];
+        map[Number(curr[0])] = temp;
+        console.log(curr);
+        curr = [];
+        console.log(curr);
+        // currElement.style("fill", "white");
+      }
+    });  
+
+      node.append("line")
+      .attr("x1", function(d, i){ return d.x})
+      .attr("y1", function(d, i){ return d.y ;})
+      .attr("x2", function(d, i){ return d.x})
+      .attr("y2", function(d, i){ return d.y ;})
+      .style("fill","black")
+      .style("stroke", "black")
+      // .style("font-size","35px")
+      .style("stroke-width", function(d,i){return dist[dis_map[map[Number(d.id)]]]} )
+
+      newq = svg.selectAll(".text").data(datap)
+      .enter()
+      .append("g")
+      .attr("class", "text")
+      .style("pointer-events", "all")
+
+      console.log("hello")
+      console.log(datap)
+      
+      newq.append("text")
+      .attr("dx",  function(d, i){ return d.x})
+        // console.log(datap[0].x)
+      .attr("dy",  function(d, i){ return d.y ;})    
+      .attr('text-anchor', 'middle')
+      .text("99")
+      .style("fill","red")
+      .style("stroke", "red")
+      .style("font-size",function(d,i){return dist_text[d_text_map[map[Number(d.id)]]]} )
+      .style("stroke-width", "")
+
+      // node.append("text")
+      // .text(function(d,i){return players[map[Number(d.id)]].jno})
+      // .attr("text-anchor", "middle")
+      // .attr("dx", function(d, i){ return d.x})
+      // .attr("dy", function(d, i){ return d.y ;})
+      // .style("fill","black")
+
+      // .style("stroke", "black")
+      // .style("font-size","35px")
+      // .style("stroke-width", "2")
+     
+    // .on("mouseout", function(d) {d3.select("#tooltip").classed("hidden", true);})
+
+  //   .on("click", function(d) {
+  //    // console.log();
+  //    console.log(d.id);
+  //    console.log("hello");
+  //    // console.log(curr);
+  //    if(curr.length === 0) {
+
+  //      // d3.select("#tooltip")
+  //      // .style("fill", "red");
+
+  //      curr.push(d.id);
+  //      console.log(curr);
+
+  //    } else {
+  //      curr.push(d.id);
+  //      var temp = players[Number(d.id)];
+  //      players[Number(d.id)] = players[Number(curr[0])];
+  //      players[Number(curr[0])] = temp;
+  //      console.log(curr);
+  //      curr = [];
+  //      console.log(curr);
+  //    }
+  //   })
+
+  });
+ 
+
+yourFunction1();
+
+
+</script>
+</html>
+ 

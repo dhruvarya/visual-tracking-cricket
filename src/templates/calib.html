@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+     <link href="../static/css/styleme.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/master.css">      
+    <link rel="stylesheet" href="../static/css/cool-navbars.css">
+
+    <script src="https://unpkg.com/konva@4.1.5/konva.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <title>Konva Drag and Drop Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #111111;
+      }
+    </style>
+  </head>
+  <body>
+
+     <nav id="main-nav">
+        <ul class="menu">
+            <li class="logo"><a href="#">Visual Tracking in Cricket</a></li>
+      <li>PLAYER ANALYSIS</li>
+    </ul>
+    <ul class="menu">
+            <li class="item button secondary"><a href="/left">Calibration</a></li>
+            <li class="item button secondary"><a href="/annotation">Annotation</a></li>
+            <li class="item button secondary"><a href="/teamdetails">Form</a></li>
+            </li>
+            
+        </ul>
+    </nav>
+        
+        
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Calibiration</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="left.html">Camera-1 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="right.html">Camera-2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="center.html">Camera-3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id='container' style="z-index:2; position:fixed; left:0px"></div>
+    <div style="position: relative;">
+      <img id='image' src = '../static/images/left.jpg' style="z-index: 1;" width="70%"></img>
+      <div id='zoomed-image' style = "position: absolute; border: 1px solid #d4d4d4; border-radius: 50%; left: 75%; top: 10%; width: 320px;">
+        <p style="position: relative; top: 48%; left: 48%; color: red">+</p> 
+      </div>
+      <div id='position-data' style = "position: absolute; border: 1px solid #d4d4d4; left: 75%; top: 63%;">
+        <h5 id="point1" style="color: white">Point1:</h5> 
+        <h5 id="point2" style="color: white">Point2:</h5> 
+        <h5 id="point3" style="color: white">Point3:</h5> 
+        <h5 id="point4" style="color: white">Point4:</h5>
+        <button class="btn btn-primary">Update Points</button> 
+      </div>
+    </div>
+    <script src='../static/js/drag.js'></script>
+    <script src='../static/js/zoom.js'></script>
+  </body>
+</html>

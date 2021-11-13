@@ -1,0 +1,263 @@
+#heats{
+	background-image:url(c2.jpg);
+	margin-top:5px;
+	margin-left:18vw;/*200px*/
+}
+
+
+#cp2{
+	position:fixed;
+	margin-top:550px;
+}
+
+#cp3{
+	position:fixed;
+	margin-top:550px;
+	margin-left:45px;
+}
+/*
+#clear{
+	position:fixed;
+	margin-top:550px;
+	margin-left:90px;
+}*/
+
+#menume{
+	background-color:#CDCDCD;
+	border:2px solid #6A6A6A;
+	border-radius:5px;
+	box-shadow:5px 5px 10px #474747;
+	width:100px;
+	padding-top:5px;
+	padding-bottom:5px;
+	display:none;
+	position:absolute;
+	
+}
+
+#clear{
+	position:absolute;
+	margin-top:70vh; /*900px;*/
+	margin-left:23vw;/*470px;*/
+	display:block;
+	width:100px;
+	background:#17202A;
+	border-radius:4px;
+	padding:5px 10px;
+	border:none;
+	color:#fff;
+	font-weight:700;
+	box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+	transition:.5s ease all
+	}
+
+#clear:hover{
+	box-shadow:0 10px 20px rgba(0,0,0,1),0 6px 6px rgba(0,0,0,1)
+}
+.menuItemme{
+	
+	padding-left:5px;
+	padding-right:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	cursor:default;
+}
+.menuItemme:hover{
+
+	background-color:#000;
+}
+
+
+
+/*
+#sidebar {
+  height: 1029px;
+  width: 380px;
+  border: solid .5px #979797;
+  position: absolute;
+  margin-top: -420px;
+  margin-left: 600px;
+	
+  }
+  #team1label {
+  position: absolute;
+  top: 6px;
+  left: 30px;
+}
+  .teambox {
+  height: 514;
+  width: 380;
+  padding: 0;
+}
+
+
+
+.lineup {
+  width: 380px;
+  height: 514px;
+}
+
+.lineuprow {
+  width: 380px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.playerdataholder {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playername {
+  margin: 0;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.playerpos {
+  display: none;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #4a4a4a;
+}*/
+
+
+
+
+
+
+input {
+  box-shadow: 0;
+  outline: 0;
+}
+.price-slider {
+  width: 300px;
+  margin-top:65vh; /*850px;*/
+  margin-left:35vw;     /*890px;*/
+  margin-right:70vw;
+  text-align: center;
+  position: fixed;
+  height: 6em;
+}
+.price-slider svg,
+.price-slider input[type=range] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  
+}
+input[type=number] {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 1.6em;
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type=number]:invalid,
+input[type=number]:out-of-range {
+  border: 2px solid #e60023;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #1da1f2;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #1da1f2;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #1da1f2;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #1da1f2;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid #1da1f2;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #a1d0ff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #1da1f2;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-moz-range-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid #1da1f2;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #a1d0ff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-upper {
+  background: #1da1f2;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-ms-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid #1da1f2;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #a1d0ff;
+  cursor: pointer;
+}

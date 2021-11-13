@@ -1,0 +1,649 @@
+/* full frame */
+.Path {
+  width: 40px;
+  height: 40px;
+}
+
+#clear{
+	position:absolute;
+	margin-top:100px;
+	margin-left:350px;
+	display:block;
+	width:100px;
+	height:50px;
+	background:#17202A;
+	border-radius:4px;
+	padding:5px 10px;
+	border:none;
+	color:#fff;
+	font-weight:700;
+	box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+	transition:.5s ease all
+	}
+
+#clear:hover{
+	box-shadow:0 10px 20px rgba(0,0,0,1),0 6px 6px rgba(0,0,0,1)
+}
+#heats{
+	background-image:url(c2.jpg);
+	/*margin-top:5px;
+	margin-left:18vw;/*200px*/
+	
+ 
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+	
+}
+
+
+input {
+  box-shadow: 0;
+  outline: 0;
+}
+.price-slider {
+  width: 300px;
+  margin-top:80px;
+  margin-left:950px;
+  margin-right:70vw;
+  text-align: center;
+  position: fixed;
+  height: 6em;
+}
+.price-slider svg,
+.price-slider input[type=range] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  
+}
+input[type=number] {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 1.6em;
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type=number]:invalid,
+input[type=number]:out-of-range {
+  border: 2px solid #e60023;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #1da1f2;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #1da1f2;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #1da1f2;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #1da1f2;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid #1da1f2;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #a1d0ff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #1da1f2;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-moz-range-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid #1da1f2;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #a1d0ff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-upper {
+  background: #1da1f2;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+}
+input[type=range]::-ms-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+  border: 1px solid #1da1f2;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #a1d0ff;
+  cursor: pointer;
+}
+
+#screen{
+	
+  margin-left:15%;
+  margin-top:1%;
+  
+  zoom:0.45;
+  display: inline-block;
+	
+  transform-origin: 0 0;
+  width:1820px;
+  height:1024px;
+}
+
+/* video frame */
+#Rectangle_video {
+  width:1440px;/*105vw;*/
+  height:807px;/*130vh;*/
+  /*mix-blend-mode: color;*/
+  border: solid 1px #5F6661;
+  /*background-color: #d8d8d8;*/
+  /*pointer-events: none;*/
+}
+
+#Rectangle_video video {
+  min-width: 1440px;
+  min-height: 807px;
+  object-fit: cover;
+  /*filter: grayscale(100%);*/
+
+}
+
+#whitespac {
+  height: 180px;
+  width: 1440;
+  margin-left:0px;
+  border: solid 1px black;
+}
+
+#controls {
+  height: 90px;
+  width: 1440px;
+  border: solid 1px #5F6661;;
+}
+
+#sidebar {
+  height: 1029px;
+  width: 380px;
+  border: solid .5px #979797;
+  position: relative;
+  margin-top: -848px;
+  margin-left: 1440px;
+}
+
+/* whole portion of light bar */
+#Rectangle_progress_bar {
+  width: 1440px;
+  height: 40px;
+  border: solid 1px #5F6661;
+  background-color: #d8d8d8;
+  z-index: 1;
+}
+
+#progress_bar {
+  position: absolute;
+  height: 40px;
+  opacity: 0.37;
+  background-color: #001305;
+}
+
+/* speed icon */
+.Speed, .Playback {
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+/* fast forward icon */
+.Shape1 {
+  width: 29px;
+  height: 20px;
+}
+
+#speed_box {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 5px;
+  margin-left: 64px;
+}
+
+#speed_container {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+#speed_container p {
+  margin: 0;
+  font-family: Roboto;
+  font-weight: 700;
+  color: white;
+  display: inline;
+}
+
+#controls h1,div,img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.vl {
+  border-left: solid 2px #979797;
+  height: 90px;
+}
+
+.Speed {
+  margin-left: 66;
+}
+
+.Playback {
+  margin-left: 76px;
+}
+
+#speed_dec {
+  margin-left: 56px;
+  cursor: pointer;
+}
+
+#speed_inc {
+  margin-left: 67px;
+  cursor: pointer;
+}
+
+#vl1 {
+  margin-left: 162px;
+}
+
+#volume {
+  margin-left: 64px;
+}
+
+#play {
+  margin-left: 57px;
+  cursor: pointer;
+}
+
+#vl2 {
+  margin-left: 73px;
+}
+
+#rewind {
+  margin-left: 59px;
+  cursor: pointer;
+}
+
+#previous {
+  margin-left: 58px;
+}
+
+#next {
+  margin-left: 70px;
+}
+
+
+.Path1 {
+  width: 40px;
+  height: 40px;
+}
+
+/* 10s back icon */
+.Shape2 {
+  width: 26.7px;
+  height: 33.3px;
+  background-color: #000000;
+}
+
+#overlay_box {
+  position: absolute;
+  margin-top: 833px;
+  margin-left: 0px;
+  opacity: 1;
+}
+
+#action_box {
+  width: 1285px;
+  height: 50px;
+  /*background-color: #3d3d3d;
+  opacity: 0.85;*/
+  overflow: hidden;
+}
+
+#notch {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 50px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 11px solid #555;
+}
+
+#slider_box {
+    position: absolute;
+    background-color: whitesmoke;
+    transform: rotate(90deg);
+    margin-top: -180px;
+    margin-left: 577px;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    border: solid .5px black;
+}
+
+#vol_slider {
+  display: inline-block;
+  margin: auto 10px;
+}
+
+#pageZoom {
+  position: fixed;
+  background-color: black;
+  opacity: 0.7;
+  width: 100;
+  height: 50;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.zoomButton {
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#zoomIn {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#zoomOut {
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
+#sections {
+  position: absolute;
+  
+  border: solid .5px #979797;
+  height: 220px;
+  width: 1440px;
+}
+
+.section {
+  height: 40px;
+  width: 0px;
+  border-right: 1px solid #5F6661;
+  margin: 0;
+}
+
+.action {
+  height: 50px;
+  width: 0px;
+  border-right: 1px solid white;
+  margin: 0;
+  color: white;
+  padding-left: 20px;
+  padding-top: 15px;
+  background-color: #3d3d3d;
+  opacity: 0.5;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.wrap {
+  width: 999999px;
+}
+
+#actionList {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 226px;
+  height: 240px;
+  background-color: #f3f3f3;
+  visibility: hidden;
+}
+
+#playerList {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 226px;
+  height: 120px;
+  background-color: #f3f3f3;
+  visibility: hidden;
+}
+
+.actionOption {
+  width: 226px;
+  height: 40px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.actionOption p {
+  margin: 10px;
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+.Rule {
+  margin: 0px 16px;
+  width: 193.8px;
+  height: 1px;
+  background-color: #dcdcdc;
+}
+
+.shortpass{
+  width: 25px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.goal {
+  width: 25px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.longpass {
+  width: 27px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.dribble {
+  width: 23px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.tackle {
+  width: 25px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.interception {
+  width: 25px;
+  height: 11px;
+  object-fit: contain;
+}
+
+.teambox {
+  height: 514;
+  width: 380;
+  padding: 0;
+}
+
+.teambox h1 {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+.playericon {
+  height: 80%;
+  width: 80%;
+  border-radius: 100%;
+  /*padding-top: 4%;*/
+}
+
+#team1label {
+  position: absolute;
+  top: 6px;
+  left: 30px;
+}
+
+#team2label {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+
+.playerTracker {
+  position: absolute;
+  background-color: lightblue;
+  border: solid 1px;
+}
+
+.playerBox {
+  position: absolute;
+  cursor: pointer;
+  border: solid 1px red;
+}
+
+.priorities {
+  position: absolute;
+  border: solid 2px white;
+  background-color: black;
+  color: white;
+}
+
+.playerOption {
+  width: 226px;
+  height: 40px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.playerOption p {
+  margin: 10px;
+  font-family: Helvetica;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.lineup {
+  width: 380px;
+  height: 514px;
+}
+
+.lineuprow {
+  width: 380px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playerdataholder {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playername {
+  margin: 0;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 1000;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.playerpos {
+  display: none;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.hl {
+  width: 329px;
+  height:
+  border: solid 1px #5F6661
+}

@@ -1,0 +1,518 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+html { font-family: 'Inter UI', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter UI var alt', sans-serif; }
+}
+*{
+    box-sizing: border-box;
+}
+*:focus{
+    outline: 0;
+}
+body, html{
+    position: relative;
+    height: 100%;
+    margin: 0;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.logo{
+    width: 110px;
+    height: 65px;
+    border: 2px solid;
+    border-left: 0;
+    padding: 5px;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 20px 5px 0 0;
+    font-weight: 600;
+    letter-spacing: -1px;
+    z-index: 1;
+}
+
+nav#main-nav{
+  background: #222;
+  padding: 5px 20px;
+}
+nav#main-nav ul{
+	list-style-type:none;
+}
+
+nav#main-nav ul li{
+    display: block;
+}
+nav#main-nav ul li a{
+	color:white;
+	text-decoration:none;
+}
+nav#main-nav ul li a:hover{
+    text-decoration:none;
+}
+/*
+nav#main-nav ul li a.active{
+    color: #fff;
+    font-size: 60px;
+    opacity: 1;
+}*/
+.github{
+    font-size: 2rem;
+    padding: 0px 10px;
+    margin: 0 5px;
+    display: inline-block;
+    position: fixed;
+    bottom: 30px;
+    left: 60px;
+    z-index: 11;
+}
+details{
+    position: relative;
+}
+details summary{
+    list-style: none;
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+    height: 35px;
+}
+details summary::-webkit-details-marker {
+  display:none;
+}
+details summary .open{
+    display: none;
+}
+details[open] summary .open{
+    display: block;
+}
+details summary .open .bar:first-of-type{
+    transform: rotate(-45deg);
+    width: 30px;
+    bottom: -11px;
+    position: relative;
+}
+details summary .open .bar:nth-child(2){
+    transform: rotate(45deg);
+    width: 30px;
+    bottom: -2px;
+    position: relative;
+}
+details[open] summary .closed{
+    display: none;
+}
+details summary:hover .closed .bar:first-of-type{
+    width: 35px;
+}
+details summary:hover .closed .bar:nth-of-type(2){
+    width: 30px;
+}
+details summary:hover .closed .bar:nth-of-type(3){
+    width: 20px;
+}
+.bar{
+    height: 1px;
+    background: #fff;
+    display: block;
+    margin: 8px;
+    -moz-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+}
+.bar:first-of-type{
+    width: 30px;
+}
+.bar:nth-of-type(2){
+    width: 25px;
+}
+.bar:nth-of-type(3){
+    width: 15px;
+}
+.line{
+    width: 1px;
+    background: rgba(255,255,255,0.05);
+    height: 100%;
+    position: fixed;
+}
+.line:first-of-type{
+    margin-left: 20%;
+}
+.line:nth-of-type(2){
+    margin-left: 40%;
+}
+.line:nth-of-type(3){
+    margin-left: 60%;
+}
+.line:nth-of-type(4){
+    margin-left: 80%;
+}
+
+/*  main structure */
+section{
+    display: none;
+}
+section.active{
+    display: block;
+}
+section div.box{
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10vh 20%;
+    color: #fff;
+}
+section h2{
+    font-size: 120px;
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+    letter-spacing: -1px;
+    font-weight: 800;
+    margin: 30px 0;
+    line-height: 0.8;
+}
+section h3{
+    font-weight: 300;
+    letter-spacing: 6px;
+    font-size: 20px;
+    line-height: 2;
+}
+section h4{
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: -5px;
+    margin: 20px 0;
+    line-height: 0.8;
+}
+section p{
+    font-weight: 300;
+    line-height: 1;
+    text-align: justify;
+}
+
+/* jellyfish structure */
+section#jellyfish div.box:first-of-type{
+    background: url("../img/jellyfish/1.jpeg") center;
+    background-size: cover;
+}
+section#jellyfish div.box:nth-of-type(2){
+    background: url("../img/jellyfish/2.jpeg") rgba(10,10,10,0.2) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+section#jellyfish div.box:nth-of-type(3){
+    background: url("../img/jellyfish/3.jpeg") center;
+    background-size: cover;
+}
+section#jellyfish div.box:nth-of-type(4){
+    background: url("../img/jellyfish/4.jpeg") center;
+    background-size: cover;
+}
+
+/* passes structure */
+section#passes div.box:first-of-type{
+    background: url("../img/passes/1.jpeg") center;
+    background-size: cover;
+}
+section#passes div.box:nth-of-type(2){
+    background: url("../img/passes/2.jpeg") center;
+    background-size: cover;
+}
+section#passes div.box:nth-of-type(3){
+    background: url("../img/passes/3.jpeg") center;
+    background-size: cover;
+}
+section#passes div.box:nth-of-type(4){
+    background: url("../img/passes/4.jpeg") rgba(10,10,10,0.4) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+
+/* skateboarding structure */
+section#skateboarding div.box:first-of-type{
+    background: url("../img/skateboarding/1.jpeg") center;
+    background-size: cover;
+}
+section#skateboarding div.box:nth-of-type(2){
+    background: url("../img/skateboarding/2.jpeg") rgba(10,10,10,0.3) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+section#skateboarding div.box:nth-of-type(3){
+    background: url("../img/skateboarding/3.jpeg") center;
+    background-size: cover;
+}
+section#skateboarding div.box:nth-of-type(4){
+    background: url("../img/skateboarding/4.jpeg") center;
+    background-size: cover;
+}
+
+/* road lights structure */
+section#road-lights div.box:first-of-type{
+    background: url("../img/road-lights/1.jpeg") center;
+    background-size: cover;
+}
+section#road-lights div.box:nth-of-type(2){
+    background: url("../img/road-lights/2.jpeg") rgba(10,10,10,0.4) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+section#road-lights div.box:nth-of-type(3){
+    background: url("../img/road-lights/3.jpeg") rgba(10,10,10,0.4) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+section#road-lights div.box:nth-of-type(4){
+    background: url("../img/road-lights/4.jpeg") rgba(10,10,10,0.2) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+
+
+/* umbrella structure */
+section#umbrella div.box:first-of-type{
+    background: url("../img/umbrella/1.jpeg") rgba(10,10,10,0.4) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+section#umbrella div.box:nth-of-type(2){
+    background: url("../img/umbrella/2.jpeg") rgba(10,10,10,0.5) center;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+section#umbrella div.box:nth-of-type(3){
+    background: url("../img/umbrella/3.jpeg") center;
+    background-size: cover;
+}
+section#umbrella div.box:nth-of-type(4){
+    background: url("../img/umbrella/4.jpeg") center;
+    background-size: cover;
+}
+
+footer{
+    position: fixed;
+    font-size: 11px;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotate(-90deg);
+    width: 100vh;
+    text-align: center;
+    left: 0;
+    padding: 85px;
+    color: #aaa;
+}
+footer a{
+    font-weight: 600;
+    color: #aaa;
+}
+footer a:hover{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+  white-space: nowrap;
+}
+.logo a,
+.toggle a {
+  font-size: 20px;
+}
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  order: 1;
+}
+.item.button {
+  order: 2;
+}
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+.item.active {
+  display: block;
+}
+
+/* Navbar Toggle */
+.toggle {
+  cursor:pointer;
+}
+.bars {
+  background: #999;
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+.bars:before,
+.bars:after {
+  background: #999;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.bars:before {
+  top: 5px;
+}
+.bars:after {
+  top: -5px;
+}
+
+/* Tablet menu */
+@media all and (min-width: 468px) {
+  .menu {
+      justify-content: center;
+  }
+
+  .logo {
+      flex: 1;
+  }
+
+  .item.button {
+      width: auto;
+      order: 1;
+      display: block;
+  }
+  .toggle {
+      order: 2;
+  }
+  .button.secondary {
+      border: 0;
+  }
+  .button a {
+      padding: 7.5px 15px;
+      background: teal;
+      /*border: 1px #006d6d solid;*/
+      border-radius:50em;
+  }
+  .button.secondary a {
+      background: transparent;    
+  }
+  .button a:hover {
+      text-decoration: none;
+      transition:all .35s;
+  }
+  .button:not(.secondary) a:hover {
+      background: #006d6d;
+      border-color: #005959;
+  }
+  .button.secondary a:hover {
+      /*color: #ddd;*/
+	  background: teal;
+     /*border-color: #005959;*/
+  } 
+}
+
+/* Desktop menu */
+@media all and (min-width: 768px) {
+  .item {
+      display: block;
+      width: auto;
+  }
+  .toggle {
+      display: none;
+  }
+  .logo {
+      order: 0;
+  }
+  .item {
+      order: 1;
+  }
+  .button {
+      order: 2;
+  }
+  .menu li {
+      padding: 15px 10px;
+  }
+  .menu li.button {
+      padding-right: 0;
+  }
+}
+
+
+section{
+    display: none;
+}
+section.active{
+    display: block;
+}
+
+/*
+@media (max-width: 768px){
+    nav#main-nav{
+        padding: 0 10px;
+        top: 15px;
+    }
+    nav#main-nav ul li a{
+        font-size: 25px;
+    }
+    nav#main-nav ul li a.active{
+        font-size: 35px;
+    }
+    section div.box{
+        padding: 55px 10%;
+    }
+    section h2{
+        font-size: 55px;
+        -webkit-text-stroke: 1px white;
+    }
+    section h3{
+        line-height: 1.5;
+        font-size: 14px;
+        letter-spacing: 1px;
+        word-spacing: 0;
+    }
+    section h4{
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+    section p{
+        line-height: 1.5;
+        font-size: 12.5px;
+    }
+    .line:first-of-type{
+        margin-left: 10%;
+    }
+    .line:nth-of-type(2){
+        margin-left: 35%;
+    }
+    .line:nth-of-type(3){
+        margin-left: 65%;
+    }
+    .line:nth-of-type(4){
+        margin-left: 90%;
+    }
+    footer{
+        padding: 3.25% 12px;
+        font-size: 9px;
+    }
+    .github{
+        bottom: 10px;
+        left: 10px;
+        padding: 0;
+    }
+    details{
+        padding: 15px 0;
+    }
+}
+*/
