@@ -4,7 +4,11 @@ Tracking position of all players in a cricket field from top view by calibrating
 
 ![Calibration](screenshots/calibration.png)
 
-https://raw.githubusercontent.com/dhruvarya/visual-tracking-cricket/main/screenshots/annotation.mp4
+
+
+https://user-images.githubusercontent.com/38999050/141610292-debb4506-8109-4db3-829e-0120f01e26fe.mp4
+
+
 
 ## Running
 	> $ cd src/
